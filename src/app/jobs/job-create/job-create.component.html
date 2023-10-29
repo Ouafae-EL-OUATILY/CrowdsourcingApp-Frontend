@@ -1,0 +1,129 @@
+<div class="card">
+  <form [formGroup]="jobForm" (ngSubmit)="onPostJob()">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-full" >
+<h1 class="title">{{ 'JobCreate.mainTitle' | translate }}</h1>
+    <p-divider align="center">
+      <span class="p-tag ">Main Info</span>
+    </p-divider>
+
+    <div formArrayName="translations">
+      <div [formGroup]="translationForm">
+
+  <div class="field col-12">
+    <label for="jobTitle">{{ 'JobCreate.jobTitle' | translate }}</label>
+    <input formControlName="title" id="jobTitle" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+  </div>
+  <div class="field col-12">
+    <label for="description">{{ 'JobCreate.description' | translate }}</label>
+    <textarea formControlName="description" id="description" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required></textarea>
+  </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label for="category">{{ 'JobCreate.category' | translate }}</label>
+            <input placeholder="Example: Web Development" formControlName="category" id="category" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+          </div>
+          <div class="field col">
+            <label for="subCategory">{{ 'JobCreate.subCategory' | translate }}</label>
+            <input placeholder="Example: Front End" formControlName="subCategory" id="subCategory" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+
+    <p-divider align="center">
+      <span class="p-tag">{{ 'JobCreate.uploadDoc' | translate }}</span>
+    </p-divider>
+
+    <div class="field col">
+      <label for="docTitle">{{'JobCreate.AssociatedDocTitle'| translate}}</label>
+      <input formControlName="documentTitle" id="docTitle" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+
+  <div class="field col-12">
+    <label for="fileUpload">{{ 'JobCreate.uploadDoc' | translate }}</label>
+    <p-fileUpload  [customUpload]="true" type="file" id="fileUpload"
+      chooseLabel="{{ 'JobCreate.chooseLabel' | translate }}"
+      uploadLabel="{{ 'JobCreate.uploadLabel' | translate }}"
+      cancelLabel="{{ 'JobCreate.cancelLabel' | translate }}"  (uploadHandler)="onUpload($event)" >
+    </p-fileUpload >
+  </div>
+
+
+<!--    <div class="formgrid grid">-->
+<!--    <div class="field col">-->
+<!--      <label for="docTitle">{{'JobCreate.AssociatedDocTitle'| translate}}</label>-->
+<!--      <input id="docTitle" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">-->
+<!--    </div>-->
+
+<!--    <div class="field col">-->
+<!--      <label for="docSummary">{{'JobCreate.AssociatedDocSummary'| translate}}</label>-->
+<!--      <input id="docSummary" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">-->
+<!--    </div>-->
+<!--    </div>-->
+    <p-divider align="center">
+      <span class="p-tag">{{ 'JobCreate.link' | translate }}</span>
+    </p-divider>
+
+<!--    links-->
+    <div class="formgrid grid">
+    <div class="field col">
+      <label for="link">{{ 'JobCreate.link' | translate }}</label>
+      <input formControlName="link" id="link" type="url" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+
+      <div class="field col">
+        <label for="linkTitle">{{'JobCreate.AssociatedLinkTitle'| translate}}</label>
+        <input formControlName="linkTitle" id="linkTitle" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+
+<!--    <div class="field col">-->
+<!--      <label for="linkSummary">{{'JobCreate.AssociatedLinkSummary'| translate}}</label>-->
+<!--      <input id="linkSummary" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">-->
+<!--    </div>-->
+    </div>
+
+<!--    <p-divider align="center">-->
+<!--      <span class="p-tag">{{ 'JobCreate.category' | translate }}</span>-->
+<!--    </p-divider>-->
+
+
+
+
+    <div class="formgrid grid">
+    <div class="field col">
+      <label for="deadline">{{ 'JobCreate.deadline' | translate }}</label>
+      <input formControlName="deadline" id="deadline" type="date" min="{{date | date:'yyyy-MM-dd'}}" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+    </div>
+    <div class="field col">
+      <label for="budget">{{ 'JobCreate.budget' | translate }}</label>
+      <input formControlName="budget" id="budget" type="number" min="0" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+    </div>
+    </div>
+
+    <div *ngIf="mode==='create'" class="formgrid grid">
+      <div class="field col">
+        <button  pButton pRipple type="submit" label="{{ 'JobCreate.btn' | translate }}" class="p-button-outlined p-button-help w-full"></button>
+      </div>
+      <div class="field col">
+        <button (click)="resetForm()"  pButton pRipple type="submit" label="Reset Form" class="p-button-outlined p-button-danger w-full"></button>
+      </div>
+    </div>
+
+    <div *ngIf="mode==='edit'"  class="formgrid grid">
+      <div class="field col">
+    <button pButton pRipple type="submit" label="Edit Post" class="p-button-outlined p-button-help w-full mb-2"></button>
+      </div>
+      <div class="field col">
+    <button (click)="onDeleteJob()"  pButton pRipple label="Delete Post" class="p-button-outlined p-button-danger w-full"></button>
+      </div>
+      <div class="field col-12">
+        <button [routerLink]="['/addTask/',jobId]" pButton pRipple label="Add a Task" class="p-button-outlined p-button-success w-full"></button>
+      </div>
+    </div>
+
+  </div>
+
+  </form>
+</div>

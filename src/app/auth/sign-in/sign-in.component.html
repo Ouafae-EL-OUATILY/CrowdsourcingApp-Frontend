@@ -1,0 +1,29 @@
+
+<div class="card">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <img src="{{logo}}" alt="App Logo" height="50" class="mb-3">
+      <div class="text-900 text-3xl font-medium mb-3">{{ "sign_in.title" | translate }}</div>
+      <span class="text-600 font-medium line-height-3">{{ "sign_in.label1" | translate }}</span>
+      <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">{{ "sign_in.label2" | translate }}</a>
+    </div>
+    <form (submit)="onSignIn(loginForm)" #loginForm="ngForm">
+    <div>
+      <label for="email" class="block text-900 font-medium mb-2">{{ "sign_in.email" | translate }}</label>
+      <input placeholder="{{ 'sign_in.emailPlaceHolder' | translate }}" name="email" ngModel id="email" type="email" pInputText class="w-full mb-3" #emailInput="ngModel" required email>
+
+      <label for="password1" class="block text-900 font-medium mb-2">{{ "sign_in.password" | translate }}</label>
+      <input placeholder="{{ 'sign_in.passPlaceHolder' | translate }}" name="password" ngModel id="password1" type="password" pInputText class="w-full mb-3" #passwordInput="ngModel" required>
+
+      <div class="flex align-items-center justify-content-between mb-6">
+        <div class="flex align-items-center">
+        </div>
+        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">{{ "sign_in.forgotPass" | translate }}</a>
+      </div>
+
+      <button type="submit" pButton pRipple label="Log In" icon="pi pi-user" class="w-full p-button-help"></button>
+
+    </div>
+    </form>
+  </div>
+</div>

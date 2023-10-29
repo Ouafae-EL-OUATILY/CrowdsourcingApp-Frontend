@@ -1,0 +1,24 @@
+<div *ngIf="jobs.length!==0" class="title">
+  All your Posted Jobs
+</div>
+<div *ngIf="jobs.length==0" class="title">
+  You Dont Have any Jobs Posted currently
+</div>
+
+<div class="grid">
+
+  <p-card *ngFor="let job of jobs" class="col-5" header="{{job.translations[0].title }}" subheader="{{job.budget}}Dh" [style]="{width: '100%'}" styleClass="p-card-shadow">
+    <p-badge value="{{job.translations[0].category}}" severity="help" styleClass="mr-2"></p-badge>
+    <p-badge value="{{job.translations[0].subCategory}}" severity="help" styleClass="mr-2"></p-badge>
+    <ng-template pTemplate="header">
+    </ng-template>
+    <p>{{job.translations[0].description | slice:0:80 }}...</p>
+    <ng-template pTemplate="footer">
+      <p-button [routerLink]="['/jobs/',job._id]" label="Check"  styleClass="p-button-outlined p-button-rounded p-button-secondary"></p-button>
+      <p-button [routerLink]="['/editJob/',job._id]" label="Edit"  styleClass="p-button-outlined p-button-rounded p-button-secondary"></p-button>
+    </ng-template>
+  </p-card>
+
+
+</div>
+

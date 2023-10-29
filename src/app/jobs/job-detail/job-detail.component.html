@@ -1,0 +1,92 @@
+<div class="surface-card p-4 shadow-2 border-round">
+  <div class="font-medium text-3xl text-900 mb-3">{{job.translations[0].title}}</div>
+  <div class="text-500 mb-5"> Posted {{calculateDiff(job.createdAt)}}</div>
+  <div class="grid grid-nogutter border-top-1 surface-border pt-2">
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Client Email</div>
+      <div class="text-900">{{job.client.email}}</div>
+    </div>
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Deadline</div>
+      <div class="text-900">{{job.deadline}}</div>
+    </div>
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Category</div>
+      <div class="text-900">{{job.translations[0].category}}</div>
+    </div>
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Budget</div>
+      <div class="text-900"> {{job.budget}}</div>
+    </div>
+    <div class="col-12 p-3">
+      <div class="text-500 font-medium mb-2">Description</div>
+      <div class="text-900 line-height-3">
+        {{job.translations[0].description}}
+      </div>
+    </div>
+
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Associated Link</div>
+      <div class="text-900"><a  href="//{{job.link}}" target="_blank" >{{job.linkTitle}} </a>
+      </div>
+    </div>
+
+    <div class="col-12 p-3">
+      <div class="text-500 font-medium mb-3">Associated Documents</div>
+      <div class="flex md:align-items-center md:justify-content-between border-top-1 border-bottom-1 surface-border p-3 flex-column md:flex-row">
+        <div class="flex align-items-center"><span class="block pi pi-file mr-2"></span><span class="text-900">{{job.documentTitle}}</span>
+        </div>
+        <button (click)="goToLink(job.document)" pButton pRipple icon="pi pi-download" label="Check Document" class=" p-button-outlined p-button-help"></button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="job.tasks.length==0" style="display: flex;justify-content: center" class="col-12 p-3">
+    <button style="width: 35%;" pButton pRipple class="p-button-raised p-button-help" label="Contact The Client"></button>
+  </div>
+
+  <div *ngIf="job.tasks.length!=0" class="card" style="margin-top: 3rem;">
+    <div class="flex justify-content-around flex-wrap card-container">
+    <p-card *ngFor="let task of job.tasks" class="flex align-items-center justify-content-center" header="{{task.title}}" subheader="{{task.budget}}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+      <ng-template pTemplate="header">
+        <!--      <img class="photo" alt="Card" src="">-->
+      </ng-template>
+      <p>{{task.description}}</p>
+      <ng-template pTemplate="footer">
+        <p-button styleClass="p-button-help"  label="Apply"></p-button>
+      </ng-template>
+    </p-card>
+</div>
+  </div>
+</div>
+
+<div *ngIf="job.suggestions.length" class="card p-4 shadow-2 border-round mt-2">
+  <div class="mt-4" *ngFor="let suggestion of job.suggestions; index as i">
+  <p-panel header='Comment {{i+1}}'>
+    <p>
+      {{suggestion.translations[0].textQuestion}}
+    </p>
+  </p-panel>
+
+</div>
+</div>
+
+
+
+
+<form [formGroup]="suggestionForm" (ngSubmit)="onAddSuggestion()">
+
+  <div formArrayName="translations">
+    <div [formGroup]="translationForm">
+
+<div class="card p-4 shadow-2 border-round mt-4">
+  <h3>Add a Comment or a Suggestion</h3>
+  <div class="flex justify-content-between flex-wrap card-container purple-container">
+  <input formControlName="textQuestion" type="text" pInputText class="col-9">
+  <button pRipple pButton class="p-button-outlined p-button-rounded p-button-help col-2" label="Post" type="submit"></button>
+  </div>
+</div>
+
+    </div>
+  </div>
+</form>

@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <img src="{{logo}}" alt="Image" height="50" class="mb-3">
+      <div class="text-900 text-3xl font-medium mb-3">{{'sign_up.title' | translate}}</div>
+    </div>
+
+    <div>
+      <form [formGroup]="signupFormClient" (ngSubmit)="onSignUp()">
+        <div formArrayName="translations" >
+          <div [formGroup]="translationForm">
+            <div class="grid">
+              <div class="col">
+        <label  for="firstname" class="block text-900 font-medium mb-2">{{'sign_up.first_name' | translate}}</label>
+        <input formControlName="firstName" id="firstname" type="text" pInputText class="w-full mb-3" placeholder="{{ 'sign_up.enterFirstName' | translate }}" required>
+              </div>
+              <div class="col">
+            <label for="lastname" class="block text-900 font-medium mb-2">{{'sign_up.last_name' | translate}}</label>
+        <input  formControlName="lastName" id="lastname" type="text" pInputText class="w-full mb-3" placeholder="{{ 'sign_up.enterLastName' | translate }}"  required>
+            </div>
+
+              </div>
+
+          </div>
+    </div>
+
+        <label for="tel" class="block text-900 font-medium mb-2">{{'sign_up.phone_number' | translate}}</label>
+        <div class="p-grid p-fluid">
+          <div class="w-full mb-3">
+            <input pInputText class="w-full mb-3"  formControlName="phoneNumber" type="number" id="tel" placeholder="{{ 'sign_up.enterPhone' | translate }}">
+          </div>
+        </div>
+
+        <label for="email" class="block text-900 font-medium mb-2">{{'sign_up.email' | translate}}</label>
+        <input formControlName="email" id="email" type="text" pInputText class="w-full mb-3" placeholder="{{ 'sign_up.enterEmail' | translate }}" required>
+
+
+        <div class="grid">
+          <div class="col">
+        <label for="password1" class="block text-900 font-medium mb-2">{{'sign_up.password' | translate}}</label>
+        <input formControlName="password" id="password1" type="password" pInputText class="w-full mb-3" placeholder="{{ 'sign_up.enterPass' | translate }}" required>
+          </div>
+          <div class="col">
+
+        <label for="confirmpassword" class="block text-900 font-medium mb-2">{{'sign_up.confirm_password' | translate}}</label>
+        <input formControlName="passwordConfirm" id="confirmpassword" type="password" pInputText class="w-full mb-3" placeholder="{{ 'sign_up.confirmPass' | translate }}" required>
+          </div>
+          </div>
+
+        <button  pButton pRipple label="{{'sign_up.title' | translate}}" icon="pi pi-user" class="w-full p-button-help" ></button>
+
+        <span class="text-600 font-medium line-height-3">{{'sign_up.already_signed' | translate}}</span>
+        <a class="font-medium no-underline ml-2 text-purple-500 cursor-pointer" routerLink="/login" >{{'sign_up.clickToLogin' | translate}}</a>
+      </form>
+    </div>
+  </div>
+</div>

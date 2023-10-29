@@ -1,0 +1,45 @@
+<div class="surface-overlay py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static">
+  <img src="{{ logo }}" alt="Image" height="50" class="mr-0 lg:mr-5">
+  <div
+    class="align-items-center flex-grow-1 justify-content-between lg:flex absolute lg:static w-full surface-overlay left-0 top-100 px-6 lg:px-0 z-4 shadow-2 lg:shadow-none hidden">
+    <ul class="list-none p-0 m-0 flex lg:align-items-center text-900 select-none flex-column lg:flex-row cursor-pointer">
+      <li>
+        <button pButton pRipple label="{{ 'header.home' | translate }}" routerLink="" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+      </li>
+      <li>
+        <button  pButton pRipple label="{{ 'header.freelancer' | translate }}" routerLink="freelancers" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+      </li>
+      <li>
+        <button *ngIf="userRole=== 'user'|| userRole==='freelancer'" pButton pRipple label="{{ 'header.job' | translate }}" routerLink="jobs" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+        <button *ngIf="userRole==='client'" pButton pRipple label="{{ 'header.postJob' | translate }}" routerLink="createJob" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+
+      </li>
+      <li>
+        <button pButton pRipple label="{{ 'header.contact' | translate }}" routerLink="contactUs" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+      </li>
+      <li>
+        <select  (change)="selectLanguage($event)"  class=" flex px-0 lg:px-1 py-0">
+        <option value="en">English</option>
+        <option [attr.selected]="lang==='fr'? '' : null" value="fr">Francais</option>
+      </select>
+      </li>
+    </ul>
+
+    <div *ngIf="userRole==='user'" class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+      <button pButton pRipple label="{{ 'header.login' | translate }}" routerLink="login" class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+      <button pButton pRipple label="{{ 'header.signup' | translate }}" routerLink="sign-up" class="p-button-help p-button px-0 lg:px-5 py-3 "></button>
+    </div>
+
+    <div *ngIf="userRole==='client'" class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+      <button pButton pRipple label="My Jobs" [routerLink]="['myjobs/',userId]" class="p-button-help p-button-text px-0 lg:px-5 py-3"></button>
+      <button pButton pRipple label="{{ 'header.logout' | translate }}" (click)="onLogOut()"  class="p-button-help p-button-text px-0 lg:px-5 py-3"></button>
+      <button pButton pRipple label="{{ 'header.account' | translate }}" [routerLink]="['client/account/',userId]" class="p-button-help p-button px-0 lg:px-5 py-3 "></button>
+    </div>
+
+    <div *ngIf="userRole==='freelancer'" class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+      <button pButton pRipple label="{{ 'header.logout' | translate }}" (click)="onLogOut()"  class="p-button-help p-button-text px-0 lg:px-5 py-3 "></button>
+      <button pButton pRipple label="{{ 'header.account' | translate }}" [routerLink]="['freelancer/account/',userId]" class="p-button-help p-button px-0 lg:px-5 py-3 "></button>
+    </div>
+
+  </div>
+</div>

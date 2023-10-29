@@ -1,0 +1,42 @@
+
+<div class="surface-card p-4 shadow-2 border-round">
+  <div class="font-medium text-3xl text-900 mb-3 flex justify-content-between">
+    {{freelancer.translations[0].firstName}} {{freelancer.translations[0].lastName}}
+    <div >
+      <button [routerLink]="['/review/'+freelancer._id]" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help p-button-outlined"></button>
+    </div>
+  </div>
+  <div class="text-500 mb-5">
+    {{freelancer.translations[0].expertise}}
+  </div>
+  <div class="grid grid-nogutter border-top-1 surface-border pt-2">
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Email</div>
+      <div class="text-900">{{freelancer.email}}</div>
+    </div>
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Country</div>
+      <div class="text-900">Morocco</div>
+    </div>
+    <div class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2">Hourly Rate</div>
+      <div class="text-900">{{freelancer.hourlyRate}}Dh</div>
+    </div>
+    <div *ngIf="this.freelancer.reviews!=0" class="col-12 md:col-6 p-3">
+      <div class="text-500 font-medium mb-2"><a [routerLink]="['/reviews/'+freelancer._id]">Reviews</a></div>
+      <div class="text-900">{{calcAverageReview()}}/5</div>
+    </div>
+    <div class="col-12 p-3">
+      <div class="text-500 font-medium mb-2">Bio</div>
+      <div class="text-900 line-height-3">
+        {{freelancer.translations[0].bio}}
+      </div>
+    </div>
+
+  </div>
+  <div  style="display: flex;justify-content: center" class="col-12 p-3">
+    <button style="width: 35%;" pButton pRipple class="p-button-raised p-button-help" label="Contact"></button>
+  </div>
+
+
+</div>

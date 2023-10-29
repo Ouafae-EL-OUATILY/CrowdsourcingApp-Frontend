@@ -1,0 +1,13 @@
+
+.card {
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  margin-top: 6rem;
+  margin-bottom: 8rem;
+
+}
+
+.surface-card {
+  border: 1px ridge #9029ef;
+}

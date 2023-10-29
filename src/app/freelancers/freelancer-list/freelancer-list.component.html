@@ -1,0 +1,42 @@
+<div class="title">
+  {{'freelancerCard.title' | translate }}
+</div>
+
+<div class="grid">
+
+  <p-card *ngFor="let freelancer of freelancers" class="col"
+          header="{{freelancer.translations[0].firstName}} {{freelancer.translations[0].lastName}}"
+          subheader="{{freelancer.translations[0].expertise}}" [style]="{width: '360px'}" styleClass="p-card-shadow">
+    <ng-template pTemplate="header">
+      <!--      <img class="photo" alt="Card" src="">-->
+    </ng-template>
+    <p>{{freelancer.translations[0].bio | slice:0:36 }}... </p>
+    <ng-template pTemplate="footer">
+      <p-button [routerLink]="['/freelancers/',freelancer._id]" styleClass="p-button-help p-button-outlined"
+                label="{{'freelancerCard.btn' | translate }}"></p-button>
+    </ng-template>
+  </p-card>
+
+<!--  <div class="col-12 md:col-6 xl:col-4 p-3 card">-->
+<!--    <div class="surface-card shadow-2 border-rounded p-4">-->
+<!--      <div class="flex border-bottom-1 surface-border pb-4">-->
+<!--        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="mr-3" style="width: 70px; height: 70px;" alt="">-->
+<!--        <div class="flex flex-column align-items-start">-->
+<!--          <span class="text-lg text-900 font-medium mb-1">Lindsay Connor</span>-->
+<!--          <span class="text-600 font-medium mb-2">Test Engineer</span>-->
+<!--          <span class="bg-blue-50 text-blue-400 border-round inline-flex py-1 px-2 text-sm">50$/h</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="flex justify-content-center pt-4">-->
+<!--        <button pButton pRipple label="See More"-->
+<!--                class="p-button-outlined p-button-help w-6 mr-2">-->
+<!--         </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+</div>
+
+
+

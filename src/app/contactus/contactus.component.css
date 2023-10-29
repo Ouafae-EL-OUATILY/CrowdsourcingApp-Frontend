@@ -1,0 +1,9 @@
+.card {
+  display: flex;
+  justify-content: center;
+  top: 50%;
+
+}
+.surface-card {
+  border: #a855f7 1px solid;
+}

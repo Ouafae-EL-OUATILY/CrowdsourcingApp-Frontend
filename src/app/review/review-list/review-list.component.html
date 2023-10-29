@@ -1,0 +1,46 @@
+<div class="block-content">
+  <div class="ng-star-inserted">
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+      <div class="grid justify-content-center">
+<!--        <div class="col-12 lg:col-4">-->
+<!--          <div class="font-medium text-xl text-900 mb-3">Share your experience</div>-->
+<!--          <p class="text-600 p-0 mt-0 mb-3 line-height-3">Orci a scelerisque purus semper eget duis at tellus at. Ut-->
+<!--            diam quam nulla porttitor.</p>-->
+<!--          <button pButton pRipple label="Write a review" class="p-element p-ripple p-button-rounded p-button p-component"></button>-->
+<!--        </div>-->
+        <div class="col-12 lg:col-4 flex align-items-start justify-content-center py-5 lg:py-0">
+          <div>
+            <span class="text-5xl text-900 font-bold mr-2">{{this.reviews.length}}</span>
+            <span class="text-5xl text-600">Reviews</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="mt-5">
+
+        <ul class="list-none m-0 p-0">
+          <li *ngFor="let review of this.reviews" class="py-5 border-top-1 surface-border">
+            <div class="flex align-items-center justify-content-between mb-3">
+              <div class="flex align-items-center">
+                <div class="flex flex-column">
+                  <span class="text-900 font-medium mb-1">{{review.client.translations[0].firstName}} {{review.client.translations[0].lastName}}</span>
+                  <span class="text-500 font-medium text-sm">{{review.createdAt | date }}</span>
+                </div>
+              </div>
+              <div class="flex align-items-center">
+                <span class="mr-2">
+                  <p-rating [ngModel]="review.score" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+              </span>
+                <span class="font-medium">{{review.score}}</span>
+              </div>
+            </div>
+            <p class="text-600 p-0 m-0 line-height-3">
+              {{review.commentary}}
+            </p>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div><!----><!----></div>

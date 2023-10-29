@@ -1,0 +1,22 @@
+<div class="card">
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+  <div class="text-center mb-5">
+    <img src="{{logo}}" alt="Image" height="50" class="mb-3">
+    <div class="text-900 text-3xl font-medium mb-3">{{'sign_up.title' | translate}}</div>
+  </div>
+
+  <div>
+      <label for="userRole" class="flex text-900 font-medium mb-4 justify-content-center">{{'sign_up.question' | translate}}</label>
+      <p-selectButton (ngModelChange)="onChange($event)" styleClass="help"  id="userRole" class="flex text-900 font-medium mb-4 w-full justify-content-evenly" [options]="users" [(ngModel)]="selectedUser" optionLabel="name" optionValue="code" required></p-selectButton>
+    <div class="flex justify-content-center">
+    <button (click)="next()"  pButton pRipple label="{{'sign_up.next' | translate}}"  class="col-5 p-button-help" ></button>
+    </div>
+
+    <div class="flex justify-content-center">
+    <span class="text-600 font-medium line-height-3">{{'sign_up.already_signed' | translate}}</span>
+    <a class="text-600 font-medium line-height-3 no-underline ml-2 text-purple-500 cursor-pointer" routerLink="/login" >{{'sign_up.clickToLogin' | translate}}</a>
+    </div>
+
+  </div>
+</div>
+</div>

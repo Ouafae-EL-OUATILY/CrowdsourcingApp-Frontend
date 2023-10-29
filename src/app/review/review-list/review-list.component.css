@@ -1,0 +1,6 @@
+:host ::ng-deep .p-rating .p-rating-icon.pi-star-fill	 {
+  color: #fbc02d !important;
+}
+:host ::ng-deep .p-rating .p-rating-icon {
+  color: black;
+}

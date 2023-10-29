@@ -1,0 +1,95 @@
+{
+  "header": {
+    "home" : "Accueil",
+    "about": "à Propos",
+    "freelancer": "Trouver un freelance",
+    "job": "Trouver un job",
+    "contact": "Contactez-nous",
+    "login": "Se Connecter",
+    "signup": "S'inscrire",
+    "account": "Mon compte",
+    "postJob": "Publier un job",
+    "choose_lang": "Choisissez une Langue"
+  },
+  "sign_in": {
+    "title": "Bienvenu",
+    "label1": "Vous n'avez pas De Compte?",
+    "label2": "Créez aujourd'hui!",
+    "email": "Email",
+    "password": "Mot de passe",
+    "forgotPass": "Mot de passe Oublié?",
+    "emailPlaceHolder": "Entrez votre e-mail",
+    "passPlaceHolder": "Entrez votre mot de passe"
+  },
+  "freelancerCard": {
+    "title": "Engagez les meilleurs freelances",
+    "btn": "Voir plus"
+  },
+  "jobsCard": {
+    "title" : "Explorez les emplois disponibles",
+    "btn": "Voir plus"
+  },
+  "sign_up": {
+    "title": "Inscrivez-Vous",
+    "next": "Suivant",
+    "question": "Inscrivez-vous en tant que Client ou Freelancer",
+    "first_name": "Prénom",
+    "enterFirstName": "Entrez votre prénom",
+    "last_name": "Nom",
+    "enterLastName": "Entrez votre nom",
+    "phone_number": "Numéro de téléphone",
+    "enterPhone": "Entrez votre numéro de téléphone",
+    "email": "E-mail",
+    "bio": "Bio",
+    "hourlyRate": "Taux horaire (DH)",
+    "expertise": "Domaine de Compétence",
+    "expertisePlaceHolder": "Exemple: Développeur Web",
+    "enterEmail": "Entrez votre e-mail",
+    "password": "Mot de passe",
+    "confirm_password": "Confirmer le mot de passe",
+    "already_signed": "Vous avez déjà un compte?",
+    "clickToLogin": "Cliquez pour vous connecter",
+    "enterPass": "Entrez votre mot de passe",
+    "confirmPass": "Confirmez votre mot de passe"
+  },
+  "JobCreate": {
+    "mainTitle": "Remplissez les informations sur votre emploi",
+    "jobTitle": "Titre de l'emploi",
+    "description": "Description",
+    "uploadDoc": "Documents associés",
+    "chooseLabel": "Joindre un fichier",
+    "uploadLabel": "télécharger",
+    "cancelLabel": "annuler",
+    "link": "Lien associé",
+    "category": "Catégorie",
+    "subCategory": "Sous-catégorie",
+    "deadline": "Délai",
+    "budget": "Budget total",
+    "btn": "Publiez le travail"
+  },
+  "home": {
+    "postJob": "Publier un Job",
+    "middleText": "et trouver le service freelance parfait pour vos besoins",
+    "freelancer": "Trouver un freelancer",
+    "job": "Trouver un job",
+    "mainText": "Profitez d'un réseau de professionnels indépendants qui peuvent tout gérer, des délais d'exécution rapides aux grands projets.",
+    "cardTitle": "PASSER À L'ÉTAPE SUIVANTE",
+    "cardText": "Faites passer votre entreprise au niveau supérieur en embauchant des freelancers expérimentés",
+    "cardBtn": "Découvrez nos freelancers ",
+    "descriptionTitle": "Facile à utiliser",
+    "step1": "Créer un emploi",
+    "step2": "Recevez des propositions de freelances",
+    "step3": "et trouver le service freelance parfait pour vos besoins",
+    "subText": "N'importe quelle tâche peut être effectuée comme vous le souhaitez"
+
+  },
+  "contactus": {
+    "title": "Nous contacter",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "subject": "Objet",
+    "detail": "Détails",
+    "btn": "Envoyer le message"
+  }
+}

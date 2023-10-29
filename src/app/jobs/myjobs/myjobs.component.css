@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+.grid {
+  margin: 1rem auto 2rem auto;
+  justify-content: center;
+}
+
+.col-5 {
+  margin: 0.5rem;
+
+}
+
+:host ::ng-deep .p-card {
+  /*border: #8117ec 1px solid !important;*/
+  transition: transform .2s;
+}
+:host ::ng-deep .p-card:hover {
+  transform: scale(1.1);
+}

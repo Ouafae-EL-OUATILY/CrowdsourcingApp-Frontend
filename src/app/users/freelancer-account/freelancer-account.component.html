@@ -1,0 +1,86 @@
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-full">
+  <h1 class="title">Profile</h1>
+  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div class="grid">
+      <div class="col-12 lg:col-12">
+        <form [formGroup]="updateFormFreelancer" (ngSubmit)="updateFreelancer()">
+          <div class="grid formgrid p-fluid">
+            <div class="field  col-12">
+              <label for="fileUpload">Upload a Profile Pic</label>
+              <p-fileUpload  [customUpload]="true" type="file" id="fileUpload"
+                             chooseLabel="{{ 'JobCreate.chooseLabel' | translate }}"
+                             uploadLabel="{{ 'JobCreate.uploadLabel' | translate }}"
+                             cancelLabel="{{ 'JobCreate.cancelLabel' | translate }}"  (uploadHandler)="onUpload($event)" >
+              </p-fileUpload >
+            </div>
+
+            <div class="w-full"  formArrayName="translations">
+              <div class="w-full" [formGroup]="translationFormFreelancer">
+
+             <div class="grid">
+            <div class="field col">
+              <label for="firstName" class="font-medium text-900">First Name</label>
+              <input formControlName="firstName" pInputText id="firstName" type="text">
+            </div>
+            <div class="field col">
+              <label for="lastName" class="font-medium text-900">Last Name</label>
+              <input formControlName="lastName" pInputText id="lastName" type="text">
+            </div>
+              </div>
+
+
+            <div  class="field col">
+              <label for="bio" class="font-medium text-900">Bio</label>
+              <textarea formControlName="bio" pInputTextarea id="bio" rows="5" style="height: 129px; overflow: hidden;"></textarea>
+            </div>
+
+            <div  class="field col">
+              <label for="expertise" class="font-medium text-900">Expertise</label>
+              <input formControlName="expertise" pInputText id="expertise" type="text" placeholder="Example: Web Developer ">
+            </div>
+
+              </div>
+            </div>
+
+
+
+
+            <div class="field mb-4 col-12 md:col-12">
+              <label for="email" class="font-medium text-900">Email</label>
+              <input formControlName="email" pInputText id="email" type="email">
+            </div>
+
+            <div  class="field mb-4 col-12 md:col-6">
+              <label for="hourlyRate" class="font-medium text-900">Hourly Rate</label>
+              <input formControlName="hourlyRate" pInputText id="hourlyRate" type="number" min="0">
+            </div>
+
+            <div class="field mb-4 col-12 md:col-6">
+              <label for="phoneNumber" class="font-medium text-900">Phone Number</label>
+              <input formControlName="phoneNumber" pInputText id="phoneNumber" type="tel">
+            </div>
+
+            <div class="field mb-4 col-12 md:col-12">
+              <label for="Address" class="font-medium text-900">Address</label>
+              <input formControlName="address" pInputText id="Address" type="text">
+            </div>
+            <div class="field mb-4 col-12 md:col-6">
+              <label for="city" class="font-medium text-900">City</label>
+              <input formControlName="city" pInputText id="city" type="text">
+            </div>
+            <div class="field mb-4 col-12 md:col-6">
+              <label for="state" class="font-medium text-900">Country</label>
+              <input formControlName="country" pInputText id="state" type="text">
+            </div>
+            <div class="col-6">
+              <button pButton pRipple class="p-button-help" type="submit" label="Save Data"></button>
+            </div>
+            <div class="col-6">
+              <button (click)="delete()" pButton pRipple class="p-button-danger" label="Delete Account"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

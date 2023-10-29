@@ -1,0 +1,102 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "freelancer": "Find a Freelancer",
+    "job": "Find a Job",
+    "contact": "Contact us",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "account": "My Account",
+    "postJob": "Post a job",
+    "choose_lang": "Choose a language",
+    "logout": "Log out"
+  },
+  "sign_in": {
+    "title": "Welcome Back",
+    "label1": "Don't have an account?",
+    "label2": "Create today!",
+    "email": "Email",
+    "password": "Password",
+    "forgotPass": "Forgot password?",
+    "emailPlaceHolder": "Enter your Email",
+    "passPlaceHolder": "Enter your Password"
+  },
+  "freelancerCard": {
+    "title": "Hire The Best Freelancers",
+    "btn": "See More"
+  },
+  "jobsCard": {
+    "title" : "Explore Available Jobs",
+    "btn": "See More"
+  },
+  "sign_up": {
+    "title": "Sign Up",
+    "next": "Next",
+    "question": "Join as a client or a freelancer",
+    "first_name": "First name",
+    "enterFirstName": "Enter Your First Name",
+    "last_name": "Last name",
+    "enterLastName": "Enter Your Last Name",
+    "phone_number": "Phone Number",
+    "enterPhone": "Enter your Phone Number",
+    "email": "Email",
+    "bio": "Bio",
+    "country": "Country",
+    "enterCountry": "Enter Your Country",
+    "hourlyRate": "Hourly Rate (DH)",
+    "enterRate": "Enter Your Hourly Rate",
+    "expertise": "Area of expertise",
+    "expertisePlaceHolder": "Example: Web developer",
+    "enterEmail": "Enter your Email",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "already_signed": "Already have an account?",
+    "clickToLogin": "Click to login",
+    "enterPass": "Enter your Password",
+    "confirmPass": "Confirm your Password"
+  },
+  "JobCreate": {
+    "mainTitle": "Fill in the information about your Job",
+    "jobTitle": "Job Title",
+    "description": "Description",
+    "uploadDoc": "Associated Documents",
+    "chooseLabel": "Attach a file",
+    "uploadLabel": "upload",
+    "cancelLabel": "cancel",
+    "AssociatedDocTitle":"Associated Document Title",
+    "AssociatedDocSummary":"Associated Document Summary",
+    "link": "Associated link",
+    "AssociatedLinkTitle":"Associated link Title",
+    "AssociatedLinkSummary":"Associated link Summary",
+    "category": "Category",
+    "subCategory": "Sub Category",
+    "deadline": "Deadline",
+    "budget": "Total Budget",
+    "btn": "Post The Job"
+  },
+  "home": {
+    "postJob": "Post a Job",
+    "middleText" : "and find the perfect freelance service for your needs",
+    "freelancer": "Find a Freelancer",
+    "job": "Find a Job",
+    "mainText": "Take advantage of a network of independent professionals who can handle everything from quick turnarounds to big projects.",
+    "cardTitle": "TAKE THE NEXT STEP",
+    "cardText" : "Take your business to the next level by hiring experienced freelancers",
+    "cardBtn": "Check out our Freelancers",
+    "descriptionTitle": "Easy to Use",
+    "step1": "Create a Job",
+    "step2": "Receive proposals from Freelancers",
+    "step3": "Hire a Pro",
+    "subText": "Get Anything Done The Way You Want"
+  },
+  "contactus" : {
+    "title": "Contact Us",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "subject": "Subject",
+    "detail": "Details",
+    "btn": "Send Message"
+  }
+}

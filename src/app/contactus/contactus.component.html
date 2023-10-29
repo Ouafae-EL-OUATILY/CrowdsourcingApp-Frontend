@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <img src="{{ logo }}" alt="Image" height="50" class="mb-3">
+      <div class="text-900 text-3xl font-medium mb-3">{{ 'contactus.title' | translate }}</div>
+    </div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <label for="email">{{ 'contactus.email' | translate }}</label>
+        <input formControlName="email" id="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      </div>
+      <div formArrayName="translations">
+        <div [formGroup]="translationForm">
+
+  <div class="formgrid grid">
+    <div class="field col">
+      <label for="firstname">{{ 'contactus.firstName' | translate }}</label>
+      <input formControlName="firstName" id="firstname" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col">
+      <label for="lastname">{{ 'contactus.lastName' | translate }}</label>
+      <input id="lastname" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+  </div>
+    <div class="field">
+      <label for="subject">{{ 'contactus.subject' | translate }}</label>
+      <input formControlName="subject" id="subject" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+  <div class="field">
+    <label for="detail">{{ 'contactus.detail' | translate }}</label>
+    <textarea formControlName="details"  id="detail"  rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+  </div>
+
+      </div>
+      </div>
+      <button pButton pRipple type="submit" label="{{ 'contactus.btn' | translate }}" class="p-button-outlined p-button-help w-full"></button>
+    </form>
+  </div>
+</div>

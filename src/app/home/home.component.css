@@ -1,0 +1,21 @@
+.category {
+  margin-top: 2rem;
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+/*.p-card {*/
+/*  color: black;*/
+/*  background-image:  linear-gradient(to right,#a855f7,#8117ec);*/
+/*}*/
+
+:host ::ng-deep  .taxoClass.p-card {
+  /*color: white;*/
+  /*background-color: #05090c;*/
+  border-radius: 5px !important;
+  background-color: rgba(122, 48, 207, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.mainSection {
+  background-color: #05090c !important;
+}
